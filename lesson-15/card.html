@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <title>对象 object</title>
+  </head>
+
+  <body>
+    <h1>按 F12 打开控制台看输出</h1>
+
+    <script>
+      let me ={
+        name: "YDY",
+        age: 22,
+        hobby: "打羽毛球"
+      };
+
+      console.log("大家好，我是"+ me.name + "，今年" + me.age + "岁，喜欢"+me.hobby);
+
+      let friends = [
+        {name:"小明", age:20},
+        {name:"小红", age:21},
+        {name:"小刚", age:19}
+      ];
+      for (let i = 0 ; i < friends.length; i++){
+        console.log(friends[i].name + "今年"+ friends[i].age + "岁");
+      }
+    </script>
+  </body>
+</html>

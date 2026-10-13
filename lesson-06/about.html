@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8" />
+        <title>关于我</title>
+        <style>
+            body {
+            background-color: #f0f2f5;
+            }
+            .card {
+            width: 300px;
+            margin: 60px auto;      /* 上下 60px，左右 auto 居中 */
+            padding: 30px;
+            text-align: center;
+            background-color: white;
+            border-radius: 12px;    /* 圆角 */
+            border: 1px solid #ddd;
+            }
+            
+            .top{
+                display: flex;          /* 关键：让头像和文字横着排 */
+                align-items: center;    /* 垂直居中，头像和文字上下对齐 */
+                gap: 20px;              /* 头像和文字之间隔 20px */
+                
+            }
+            .avatar{
+                width: 80px;
+                height: 80px;           /* 正方形（宽=高）→ 才是正圆 */
+                border-radius: 50%;
+            }
+            .info{
+                text-align: left;
+            }
+        </style>
+    </head>
+    <body>
+    <div class="card">
+        <div class="top">
+            <img src="https://picsum.photos/150/150" class="avatar" alt="这是图片">
+            <div class="info">
+                <h1>YDY</h1>
+                <p>今年22岁，学校南京工业职业技术大学</p>
+                
+                <p>前端实习生</p>
+            </div>      
+        </div>
+        <p>爱好：打篮球</p>
+    </div>
+    
+    </body>
+    
+
+
+</html>

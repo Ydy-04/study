@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <title>待办清单（最终版）</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        max-width: 400px;
+        margin: 60px auto;
+        padding: 0 20px;
+      }
+      input {
+        padding: 8px;
+        font-size: 16px;
+        width: 250px;
+      }
+      button {
+        padding: 8px 16px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+      ul {
+        list-style: none;
+        padding: 0;
+      }
+      li {
+        background-color: #f5f5f5;
+        padding: 10px;
+        margin: 6px 0;
+        border-radius: 6px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+      }
+      li.done {
+        text-decoration: line-through; /* 删除线 */
+        color: #999;
+      }
+      li button {
+        padding: 4px 10px;
+        font-size: 14px;
+        background-color: #e53935;
+        color: white;
+        border: none;
+        border-radius: 4px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>我的待办清单</h1>
+
+    <input id="input" placeholder="输入要办的事..." />
+    <button id="addBtn">添加</button>
+
+    <ul id="list"></ul>
+    <p id="count"></p>
+
+    <script>
+      // 数据：每条待办是一个对象 { text, done }
+      let todos = [];
+
+      let input = document.querySelector("#input");
+      let addBtn = document.querySelector("#addBtn");
+      let list = document.querySelector("#list");
+
+      // 渲染
+      function render() {
+        let html = "";
+        for (let i = 0; i < todos.length; i++) {
+          let todo = todos[i];
+          // 三元运算符：done 为 true 时，加 class="done"（会触发删除线）
+          let doneClass = todo.done ? ' class="done"' : "";
+          html = html + '<li data-index="' + i + '"' + doneClass + '>' +
+                 todo.text +
+                 ' <button data-index="' + i + '">删除</button></li>';
+        }
+        list.innerHTML = html;
+        document.querySelector("#count").textContent = "共 " + todos.length + " 件事";
+      }
+
+      // 添加
+      addBtn.addEventListener("click", function () {
+        let text = input.value;
+        if (text !== "") {
+          todos.push({ text: text, done: false });
+          input.value = "";
+          render();
+        }
+      });
+
+      // 点击列表：区分"删除"还是"勾选完成"
+      list.addEventListener("click", function (e) {
+        if (e.target.tagName === "BUTTON") {
+          // 点的是删除按钮 → 删除
+          let index = Number(e.target.getAttribute("data-index"));
+          todos.splice(index, 1);
+        } else if (e.target.tagName === "LI") {
+          // 点的是待办本身 → 切换完成状态
+          let index = Number(e.target.getAttribute("data-index"));
+          todos[index].done = !todos[index].done;  // 取反切换
+        }
+        render();
+      });
+    </script>
+  </body>
+</html>

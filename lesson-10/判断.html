@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <title>if/else 判断</title>
+  </head>
+
+  <body>
+    <h1>按 F12 打开控制台看输出</h1>
+
+    <script>
+      // 1. 简单判断：if / else
+      let age = 22;
+      if (age >= 18) {
+        console.log("你是成年人");
+      } else {
+        console.log("你是未成年人");
+      }
+
+      // 2. 多条件：if / else if / else
+      let score = 50;
+      if (score >= 90) {
+        console.log("优秀");
+      } else if (score >= 60) {
+        console.log("及格");
+      } else {
+        console.log("不及格");
+      }
+
+      // 3. === 是判断相等，不是赋值
+      let name = "YDY";
+      if (name === "YDY") {
+        console.log("你好，YDY！");
+      }
+
+      // 4. 试试把上面的 score 改成 95 或 50，看输出怎么变
+    </script>
+  </body>
+</html>

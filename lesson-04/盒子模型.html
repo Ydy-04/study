@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <title>盒子模型示例</title>
+    <style>
+      .box {
+        width: 200px;              /* 内容区宽度 */
+        padding: 20px;             /* 内边距：文字和边框之间 */
+        border: 3px solid black;   /* 边框：粗细 样式 颜色 */
+        margin: 30px;              /* 外边距：和别的盒子之间 */
+        background-color: #ffe0b2; /* 背景色（会铺满内容 + 内边距区域） */
+      }
+
+      /* 第二个盒子换一种边框样式，方便对比 */
+      .box2 {
+        width: 200px;
+        padding: 20px;
+        border: 3px dashed blue;   /* dashed = 虚线 */
+        margin: 30px;
+        background-color: #b3e5fc;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- div 是万能盒子，用来装内容 -->
+    <div class="box">
+      盒子一：注意看——背景色一直延伸到边框内侧，那圈橙色就是 padding。
+    </div>
+
+    <div class="box2">
+      盒子二：边框是虚线。我和盒子一之间隔着的空白，就是 margin。
+    </div>
+  </body>
+</html>

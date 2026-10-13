@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <title>函数 function</title>
+  </head>
+
+  <body>
+    <h1>按 F12 打开控制台看输出</h1>
+
+    <script>
+      // 1. 定义 + 调用（可以调用多次）
+      function sayHello() {
+        console.log("你好！");
+      }
+      sayHello();
+      sayHello();
+
+      // 2. 带参数的函数：传不同的原料，得到不同的结果
+      function greet(name) {
+        console.log("你好，" + name);
+      }
+      greet("YDY");
+      greet("小明");
+
+      // 3. 带返回值的函数：return 把结果交出去
+      function add(a, b) {
+        return a + b;
+      }
+      let sum = add(3, 5);
+      console.log(sum);        // 8
+      console.log(add(10, 20)); // 30（直接打印调用结果也可以）
+    </script>
+  </body>
+</html>

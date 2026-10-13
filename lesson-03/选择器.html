@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <title>CSS 选择器示例</title>
+    <style>
+      /* 1. 元素选择器：选中所有 p */
+      p {
+        font-size: 18px;
+      }
+
+      /* 2. 类选择器：选中所有 class="highlight" 的元素 */
+      .highlight {
+        color: red;
+        font-weight: bold; /* font-weight 是"加粗" */
+      }
+
+      /* 3. id 选择器：选中 id="main-title" 的那一个元素 */
+      #main-title {
+        color: blue;
+        text-align: center;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- id 全页唯一，用 #main-title 选中 -->
+    <h1 id="main-title">我是主标题（用 id 选中）</h1>
+
+    <p>我是普通段落。</p>
+
+    <!-- class 可以重复，两个段落都用 highlight -->
+    <p class="highlight">我用了 class，所以变红加粗。</p>
+    <p class="highlight">我也用了同样的 class，所以我也变红加粗。</p>
+  </body>
+</html>

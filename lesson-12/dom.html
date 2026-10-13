@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <title>DOM：让页面动起来</title>
+    <style>
+      body {
+        text-align: center;
+        font-family: sans-serif;
+        margin-top: 60px;
+      }
+      button {
+        padding: 10px 20px;
+        font-size: 18px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1 id="title">你好，点下面的按钮试试</h1>
+    <button id="btn">点我变色</button>
+
+    <script>
+      // 第 1 步：抓元素
+      let title = document.querySelector("#title");
+      let btn = document.querySelector("#btn");
+
+      // 第 3 步：监听点击 + 第 2 步：改内容/样式
+      btn.addEventListener("click", function () {
+        title.textContent = "你点了我！";
+        title.style.color = "red";
+      });
+    </script>
+  </body>
+</html>

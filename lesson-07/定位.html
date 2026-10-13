@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <title>position 定位示例</title>
+    <style>
+      /* 父元素做"锚点"：写 relative，但外观不变 */
+      .card {
+        position: relative;
+        width: 300px;
+        height: 150px;
+        background-color: #fff;
+        border: 1px solid #ddd;
+        margin: 60px auto;
+      }
+
+      /* 子元素 absolute：相对 .card 定位，贴在右上角 */
+      .badge {
+        position: absolute;
+        top: 10px;      /* 距卡片顶部 10px */
+        right: 10px;    /* 距卡片右侧 10px */
+        background-color: #e53935;
+        color: white;
+        padding: 4px 10px;
+        border-radius: 4px;
+      }
+
+      /* fixed：固定在窗口右下角，滚动也不动 */
+      .back-top {
+        position: fixed;
+        right: 20px;
+        bottom: 20px;
+        background-color: #333;
+        color: white;
+        padding: 10px 15px;
+        border-radius: 6px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- 卡片 + 右上角 VIP 徽章 -->
+    <div class="card">
+      我是卡片
+      <span class="badge">VIP</span>
+    </div>
+
+    <!-- 固定在窗口右下角 -->
+    <span class="back-top">回到顶部</span>
+  </body>
+</html>

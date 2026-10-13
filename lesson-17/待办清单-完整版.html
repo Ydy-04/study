@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <title>待办清单（含删除）</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        max-width: 400px;
+        margin: 60px auto;
+        padding: 0 20px;
+      }
+      input {
+        padding: 8px;
+        font-size: 16px;
+        width: 250px;
+      }
+      button {
+        padding: 8px 16px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+      ul {
+        list-style: none;
+        padding: 0;
+      }
+      li {
+        background-color: #f5f5f5;
+        padding: 10px;
+        margin: 6px 0;
+        border-radius: 6px;
+        display: flex;              /* 用 flex 让文字和按钮左右分开 */
+        justify-content: space-between;
+        align-items: center;
+      }
+      li button {
+        padding: 4px 10px;
+        font-size: 14px;
+        background-color: #e53935;
+        color: white;
+        border: none;
+        border-radius: 4px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>我的待办清单</h1>
+
+    <input id="input" placeholder="输入要办的事..." />
+    <button id="addBtn">添加</button>
+
+    <ul id="list"></ul>
+    <p id="count"></p>
+
+    <script>
+      let todos = [];
+
+      let input = document.querySelector("#input");
+      let addBtn = document.querySelector("#addBtn");
+      let list = document.querySelector("#list");
+
+      // 渲染
+      function render() {
+        let html = "";
+        for (let i = 0; i < todos.length; i++) {
+          html = html + '<li>' + todos[i] +
+                 ' <button data-index="' + i + '">删除</button></li>';
+        }
+        list.innerHTML = html;
+        document.querySelector("#count").textContent = "共 " + todos.length + " 件事";
+      }
+
+      // 添加
+      addBtn.addEventListener("click", function () {
+        let text = input.value;
+        if (text !== "") {
+          todos.push(text);
+          input.value = "";
+          render();
+        }
+      });
+
+      // 删除（事件委托）
+      list.addEventListener("click", function (e) {
+        if (e.target.tagName === "BUTTON") {
+          let index = Number(e.target.getAttribute("data-index"));
+          todos.splice(index, 1);
+          render();
+        }
+      });
+    </script>
+  </body>
+</html>

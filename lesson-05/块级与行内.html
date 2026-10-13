@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <title>块级 vs 行内 vs 居中</title>
+    <style>
+      /* 加背景色，方便看清每个元素占了多大地方 */
+      .block {
+        background-color: #ffe0b2;
+        margin: 10px;
+        padding: 10px;
+      }
+
+      .inline {
+        background-color: #b3e5fc;
+        padding: 10px;
+      }
+
+      /* 居中的黄金三件套 */
+      .center-box {
+        width: 300px;           /* 1. 先有宽度 */
+        margin: 0 auto;         /* 2. 左右 auto → 水平居中 */
+        text-align: center;     /* 3. 内部行内内容居中 */
+        border: 2px solid black;
+        padding: 20px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h2>① 块级元素：独占一整行，从上往下排（div 天生就是块级）</h2>
+    <div class="block">块级 1</div>
+    <div class="block">块级 2</div>
+    <div class="block">块级 3</div>
+
+    <h2>② 行内元素：只占内容大小，从左往右排（span 天生就是行内）</h2>
+    <span class="inline">行内 1</span>
+    <span class="inline">行内 2</span>
+    <span class="inline">行内 3</span>
+
+    <h2>③ 居中：margin: 0 auto 让块级盒子水平居中</h2>
+    <div class="center-box">
+      我是被居中的盒子，我的内部文字也居中了
+    </div>
+  </body>
+</html>

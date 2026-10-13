@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <title>数组 array</title>
+  </head>
+
+  <body>
+    <h1>按 F12 打开控制台看输出</h1>
+
+    <script>
+      // 1. 创建数组：方括号 []，逗号隔开
+      let hobbies = ["篮球", "羽毛球", "看电影"];
+
+      // 2. 访问：下标从 0 开始
+      console.log(hobbies[0]); // 篮球
+      console.log(hobbies[1]); // 羽毛球
+      console.log(hobbies[2]); // 看电影
+
+      // 3. 长度
+      console.log("共有 " + hobbies.length + " 个爱好");
+
+      // 4. 修改某个位置
+      hobbies[1] = "跑步";
+      console.log(hobbies[1]); // 跑步
+
+      // 5. 末尾添加
+      hobbies.push("游泳");
+      console.log("现在有 " + hobbies.length + " 个爱好"); // 4
+      console.log("最后一个是 " + hobbies[hobbies.length - 1]); // 游泳
+    </script>
+  </body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <title>对象 object</title>
+  </head>
+
+  <body>
+    <h1>按 F12 打开控制台看输出</h1>
+
+    <script>
+      // 1. 创建对象：花括号 {}，键: 值，逗号隔开
+      let person = {
+        name: "YDY",
+        age: 22,
+        hobby: "打羽毛球"
+      };
+
+      // 2. 访问：对象.属性名
+      console.log(person.name); // YDY
+      console.log(person.age);  // 22
+
+      // 3. 修改 & 添加
+      person.age = 23;                              // 修改
+      person.school = "南京工业职业技术大学";          // 添加新属性
+      console.log(person.school);
+
+      // 4. 数组里放对象（组合拳）
+      let people = [
+        { name: "小明", age: 20 },
+        { name: "小红", age: 21 }
+      ];
+      console.log(people[0].name); // 小明
+      console.log(people[1].age);  // 21
+    </script>
+  </body>
+</html>

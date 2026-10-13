@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <title>JavaScript 变量</title>
+  </head>
+
+  <body>
+    <h1>按 F12 打开控制台看输出</h1>
+
+    <script>
+      // 1. 声明变量：let 名字 = 值;
+      let myName = "YDY";
+      let myAge = 22;
+
+      // 2. 使用变量
+      console.log(myName);
+      console.log(myAge);
+
+      // 3. 变量可以重新赋值（不用再写 let）
+      myAge = 23;
+      console.log("一年后，我" + myAge + "岁");
+
+      // 4. 字符串拼接
+      console.log("大家好，我是" + myName);
+
+      // 5. 文字 + 是拼接，数字 + 是加法
+      console.log("5" + "5");   // 文字拼接 → 55
+      console.log(5 + 5);       // 数字相加 → 10
+    </script>
+  </body>
+</html>

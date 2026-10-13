@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <title>for 循环</title>
+  </head>
+
+  <body>
+    <h1>按 F12 打开控制台看输出</h1>
+    <ul id="list"></ul>
+    <script>
+      let list = document.querySelector("#list");
+      let hobbies = ["篮球","羽毛球","看电影","游泳"];
+
+      let html = "";
+      for (let i = 0 ;i < hobbies.length; i++){
+        html = html + "<li>" + hobbies[i] + "</li>";
+      }
+      list.innerHTML = html;
+    </script>
+  </body>
+</html>
